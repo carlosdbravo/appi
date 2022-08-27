@@ -11,12 +11,9 @@ app.use(morgan("dev"));
 app.use(express.json());//Perimite procesar formatos json al servidor
 app.use(express.urlencoded({ extended: false }));// Procesar datos que bienen desde formulario 
 
-//Routes
-app.get('/', (req, res) => {
-    res.status(200);
-    res.send("Hellow world");
-    console.log({ "Nombre": "Carlos Bravo" })
-})
+//routes
+app.use(require("./routes/routes"))
+app.use(require('./routes/movies'))
 
 // Strating the server
 app.listen(app.get("port"), () => {
