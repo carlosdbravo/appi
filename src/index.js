@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: false }));// Procesar datos que bienen de
 
 //Routes
 app.get('/', (req, res) => {
+    res.status(200);
     res.send("Hellow world");
     console.log({ "Nombre": "Carlos Bravo" })
 })
